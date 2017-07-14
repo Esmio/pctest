@@ -1,0 +1,64 @@
+@import '../variables.less';
+@import '../general/layout.less';
+.header {
+  .row;
+  background-color: @base-white;
+}
+
+.header_topTray {
+  color: @text-gray;
+  font-size: @size-2;
+  height: @header-height;
+  line-height: @header-height;
+  background: @bg-gray;
+  overflow: hidden
+}
+.header_marquee {
+  width: 50%;
+}
+.header_logo {
+  vertical-align: middle;
+  width: auto;
+  height: auto;
+  display: inline-block;
+  margin: @size-0;
+}
+.header_login {
+  text-align: center;
+  z-index: 97;
+  position: relative;
+}
+.header_row {
+  text-align: right;
+  width: @page-width;
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  justify-content: space-between;
+}
+.header_logoAnchor {
+  float: left;
+  width: @nav-side-width;
+  text-align: center;
+}
+.header_authColumn,
+.header_logoColumn {
+  .column;
+}
+.header_permalink {
+  color: inherit;
+  font-size: inherit;
+  padding: 0 @size-1;
+  border-left: 1px solid @border;
+
+  &:last-child {
+    padding-right: 0;
+  }
+}
+
+.header_permalinkIcon {
+  font-size: @size-4;
+  vertical-align: sub;
+  color: @accent-orange;
+  margin: 0 @size-0;
+}

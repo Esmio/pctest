@@ -1,0 +1,66 @@
+@import '../../../styles/variables.less';
+
+.ratioCtrl {
+  color: @text-black;
+  display: flex;
+  align-self: stretch;
+  flex-direction: column;
+  margin: @size-0 @size-0 @size-0 0;
+}
+.ratioCtrl_paragraph {
+  display: flex;
+  flex-direction: row;
+  font-size: @size-3;
+  margin-top: @size-0 / 2;
+}
+.ratioCtrl_rangeInput {
+  background-color: @playground-gray;
+  box-shadow: @insetShadow-dp2;
+  border-radius: @size-7;
+  margin: @size-0 auto;
+  padding: 0 @size-1;
+  color: @base-white;
+}
+.ratioCtrl_label {
+  background-color: @label-blue;
+  color: @base-white;
+  display: flex;
+  width: @size-7 + @size-0;
+  font-size: @size-1;
+  line-height: @size-5;
+  padding: 0 @size-0 / 2;
+  position: relative;
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+
+  &::after {
+    background-color: transparent;
+    border-color: transparent transparent transparent @label-blue;
+    border-style: solid;
+    border-width: @size-5 / 2;
+    content: '';
+    display: inline-block;
+    height: @size-5;
+    left: 100%;
+    position: absolute;
+    top: 0;
+    width: @size-5;
+  }
+}
+.ratioCtrl_content {
+  background-color: @base-white;
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+  min-width: 0;
+  display: flex;
+  flex: 1;
+  line-height: @size-5;
+  color: @label-blue;
+  padding: 0 @size-0 / 2 0 @size-3;
+  p {
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}

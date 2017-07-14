@@ -1,0 +1,57 @@
+@import '../variables.less';
+@import '../general/layout.less';
+.homePage_body {
+  background: url('../../assets/image/playground_bg.png') repeat top left;
+}
+.homePage_bodyContent {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  width: @page-width;
+  margin: 0 auto @size-3 auto;
+  position: relative;
+}
+.homePage_playground {
+  margin-bottom: @size-2;
+}
+.homePage_CenterPanel {
+  margin-bottom: @size-3;
+  display: flex;
+}
+.homePage_panel {
+  display: flex;
+  flex-direction: column;
+  background-color: @base-white;
+  box-shadow: @shadow-dp2;
+  margin-bottom: @panel-margin;
+  padding: @size-0 @size-0 0 @size-0;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+.homePage_pabelBody {
+  display: flex;
+  flex: 1 1;
+  flex-direction: column;
+  height: 100%;
+}
+.homePage_panel__center {
+  width: @panel-center;
+  margin: 0 @panel-margin;
+  float: left;
+  margin-left: @panel-side + @panel-margin;  
+}
+.homePage_panel__side {
+  display: inline-block;
+  width: @panel-side;
+  position: absolute;
+  max-height: 100%;
+  top: 0;
+  bottom: 0;
+}
+
+.homePage_panelHeader {
+  font-size: @size-3;
+  font-weight: 600;
+  margin-bottom: @size-0;
+}

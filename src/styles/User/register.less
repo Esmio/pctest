@@ -1,0 +1,547 @@
+@import '../variables.less';
+@import '../general/layout.less';
+
+.register {
+  background: url('../../assets/image/playground_bg.png') repeat top left;
+  overflow: auto;
+  padding-bottom: @size-3;
+}
+.registerPageWidth {
+  text-align: center;
+}
+.verticalStrike {
+  span {
+    position: relative;
+    padding: @size-3;
+    &::before,
+    &::after {
+      background-color: @border;
+      content: '';
+      height: 1px;
+      position: absolute;
+      top: 50%;
+      transform: translate3d(0, -1px, 0);
+      width: 150%;
+    }
+    &::before {
+      left: 100%;
+    }
+    &::after {
+      right: 100%;
+    }
+  }
+}
+.register_headline {
+  color: @text-gray;
+  font-size: @size-4;
+  font-weight: 400;
+  margin: @size-3 0 @size-5 0;
+  overflow: hidden;
+  text-align: center;
+  .verticalStrike;
+}
+.register_formHeader {
+  background-color: @label-blue;
+  border-radius: 6px;
+  box-shadow: @shadow-dp2;
+  color: @base-white;
+  display: inline-block;
+  font-size: @size-2;
+  font-weight: 400;
+  left: @size-0;
+  line-height: 2.5;
+  min-width: @size-7 * 2;
+  position: absolute;
+  top: 0;
+  transition-property: background-color, box-shadow;
+  transition-duration: 0.15s;
+  transition-timing-function: @transition-timing;
+  transform: translate3d(0, -40%, 0);
+
+  &:disabled {
+    background-color: @border;
+    cursor: initial;
+    box-shadow: none;
+  }
+}
+.profile_btnRow {
+  margin-top: @size-3;
+}
+.profile_removeBankCardBtn {
+  margin-left: @size-3;
+  font-size: @size-1;
+  color: @accent-cinnabar;
+  padding: @size-0 @size-3;
+  line-height: @size-4;
+  vertical-align: middle;
+}
+.register_section {
+  .clearfix;
+  text-align: center;
+  margin-bottom: @size-5;
+}
+.register_form {
+  .clearfix;
+  background-color: @base-white;
+  border-radius: 6px;
+  display: inline-block;
+  display: inline-block;
+  margin: 0 auto;
+  padding: @size-6 @size-3 @size-3 @size-3;
+  position: relative;
+  position: relative;
+  width: 100%;
+}
+.register_formBody {
+  max-height: 0;
+  overflow: hidden;
+  transition-property: max-height;
+  transition-duration: 0.25s;
+  transition-timing-function: @transition-timing;
+}
+.register_formBody__expand {
+  .register_formBody;
+  max-height: 1000px;
+}
+.register_formResponse {
+  padding: @size-0;
+  color: @base-white;
+  border-radius: 6px;
+  margin-top: @size-3;
+
+  i, span {
+    vertical-align: middle;
+  }
+
+  i {
+    margin-right: @size-0;
+  }
+}
+.register_inputBox {
+  margin: 0 auto @size-3 auto;
+  display: inline-block;
+  width: 35rem;
+  position: relative;
+}
+.register_inputBox__digit {
+  .register_inputBox;
+  margin: @size-0 auto @size-5 auto;
+}
+
+.register_inputMsg {
+  position: absolute;
+  width: 70%;
+  right: 10%;
+  top: 100%;
+  text-align: left;
+  font-size: @size-1;
+  transform: translate3d(0, -25%, 0);
+  opacity: 0;
+
+  span {
+    vertical-align: middle;
+  }
+}
+.register_inputMsg__show {
+  .register_inputMsg;
+  transition-property: transform opacity;
+  transition-duration: 0.15s;
+  transition-timing-function: @transition-timing;
+  transform: translate3d(0, 0, 0);
+  opacity: 1;
+}
+.register_inputLength {
+  font-size: @size-0;
+  display: block;
+  color: @border;
+  right: 0;
+  line-height: @size-6;
+  position: absolute;
+  text-align: left;
+  top: 0;
+}
+
+input::placeholder {
+  font-size: @size-1;
+  opacity: 0.4;
+}
+input::placeholder-shown {
+  font-size: @size-1;
+  opacity: 0.4;
+}
+input::-webkit-input-placeholder {
+  font-size: @size-1;
+  opacity: 0.4;
+}
+input:-ms-input-placeholder {
+  font-size: @size-1;
+  opacity: 0.4;
+}
+input:-moz-input-placeholder {
+  font-size: @size-1;
+  opacity: 0.4;
+}
+input::-moz-input-placeholder {
+  font-size: @size-1;
+  opacity: 0.4;
+}
+.register_input[type*="date"] {
+  padding-left: @size-5;
+}
+.register_input[type*="date"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.register_input[type*="date"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.register_input[type*="date"]::-webkit-clear-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.register_input[type*="date"]::-webkit-calendar-picker-indicator{
+  position: absolute;
+  left: 0;
+  top: @size-0;
+  height: @size-3;
+  width: @size-3;
+  z-index: 999;
+  color: rgba(0,0,0,0);
+  opacity: 0;
+  background-color: transparent;
+}
+.register_dataInputIcon {
+  position: absolute;
+  top: 50%;
+  left: 20%;
+  font-size: @size-4;
+  transform: translateY(-50%);
+  color: @text-gray;
+}
+.register_input__line2 {
+  .register_input;
+  float: right;
+}
+.register_inputLabel {
+  color: @text-gray;
+  font-size: @size-1;
+  line-height: @size-6;
+  padding-right: @size-0;
+  width: 20%;
+  float: left;
+  text-align: right;
+  position: relative;
+}
+.register_checkBox {
+  position: relative;
+  margin-bottom: @size-5;
+}
+
+.register_checkBoxIcon {
+  font-size: @size-4;
+  vertical-align: middle;
+  margin-right: @size-0;
+}
+.register_checkBoxLabel span,
+.register_agreementBtn {
+  vertical-align: middle;
+}
+.register_agreementBtn {
+  color: @accent-cinnabar;
+  font-weight: 500;
+}
+.register_resetBtn {
+  font-size: @size-2;
+  color: @text-gray;
+  vertical-align: middle;
+}
+.register_submitBtn {
+  vertical-align: middle;  
+  margin-left: @size-6;
+}
+.register_digitInputsBody {
+  .column;
+  float: left;
+  position: relative;
+}
+.register_digitInput {
+  width: @size-6;
+  text-align: center;
+  display: inline-block;
+  border: 1px solid @border;
+  border-radius: 6px;
+  position: relative;
+  display: inline-block;
+  font: normal normal normal 24px/1 "Material Design Icons";
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.register_digitInput {
+  .register_input;
+  vertical-align: middle;
+  &:empty {
+    padding-top: @size-6;
+  }
+  &:read-only {
+    width: @size-6;
+    background-color: @base-white;
+    border-bottom: 1px solid @border;  
+  }
+}
+.register_digitInputDivider {
+  text-align: middle;
+  float: left;
+  vertical-align: middle;  
+  margin: 0 @size-0;
+  color: @border;
+  line-height: @size-6;
+}
+@keyframes blink {
+  0% {
+    width: 1px;
+  }
+  50% {
+    width: 1px;
+  }
+  100% {
+    width: 0;
+  }
+}
+.register_digitInput__active {
+  .register_digitInput;
+  .register_digitInput__hidden:focus ~ & {
+    border-color: @light-orange;
+
+    &::before {
+      position: absolute;
+      content: '';
+      background-color: @text-black;
+      left: @size-0;
+      height: 60%;
+      width: 1px;
+      top: 20%;
+      animation: blink 1s infinite ease;
+    }
+  }
+}
+.register_digitInput__hasValue {
+  .register_digitInput;
+  &::before {
+    color: @text-gray;
+    content: "\F382";
+    font-size: @size-3;
+    font-weight: bold;
+    height: @size-3;
+    left: 50%;
+    line-height: 1;
+    position: absolute;
+    top: 50%;
+    transform: translate3d(-50%, -50%, 0);
+    width: @size-3;
+  }
+}
+.register_digitInput__hidden {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  color: rgba(0,0,0,0);
+  background-color: transparent;
+  z-index: 10;
+  user-select: none;
+  
+
+  & + .register_digitInput {
+    .register_digitInput__active
+  }
+
+  &::selection {
+    color: rgba(0,0,0,0);
+    background-color: transparent;
+  }
+
+  &::placeholder {
+    color: rgba(0,0,0,0);
+  }
+}
+
+.register_digitInput__hidden::-webkit-input-placeholder {
+  font-size: @size-1;
+  opacity: 0;
+}
+.register_digitInput__hidden:-ms-input-placeholder {
+  font-size: @size-1;
+  opacity: 0;
+}
+.register_digitInput__hidden:-moz-input-placeholder {
+  font-size: @size-1;
+  opacity: 0;
+}
+.register_digitInput__hidden::-moz-input-placeholder {
+  font-size: @size-1;
+  opacity: 0;
+}
+.register_disclaimer {
+  font-size: @size-1;
+  color: @label-blue;
+  margin: 0 auto @size-3 auto;
+
+  span {
+    vertical-align: middle;
+  }
+}
+
+.register_disclaimerIcon {
+  vertical-align: middle;
+  margin-right: @size-0;
+}
+
+.register_input__varifyCode {
+  .register_input;
+  width: 59%;
+}
+.register_varifyImgRefresh {
+  font-size: @size-1;
+  color: @text-gray;
+  position: absolute;
+  top: 100%;
+  width: 30%;
+  right: 0;
+  text-align: right;
+
+  span {
+    vertical-align: middle;
+  }
+}
+.register_varifyImgRefreshIcon {
+  vertical-align: middle;
+  font-size: @size-2;
+  margin-right: @size-0;
+}
+.register_inputImg {
+  width: 20%;
+  height: @size-6;
+  float: right;
+  background-size: 250%;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.register_inputMsgIcon {
+  vertical-align: middle;
+  font-size: @size-3;
+  margin-right: @size-0 / 2;
+}
+
+.register_select {
+  background-color: @base-white;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+  box-shadow: @shadow-dp4;
+  color: @text-gray;
+  display: block;
+  font-size: @size-2;
+  max-height: (@size-7 * 4);
+  overflow-y: scroll;
+  position: fixed;
+  z-index: 99;
+}
+.register_option {
+  display: block;
+  text-align: left;  
+  width: 100%;
+  line-height: @size-6;
+  padding: 0 @size-0;
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    display: inline-block;
+    height: 1px;
+    left: @size-0;
+    right: @size-0;
+    bottom: 0;
+    background-color: lighten(@border, 15%);
+  }
+  
+  &:hover {
+    .register_optionSpan__Name {
+      color: @light-orange;
+    }
+  }
+}
+.register_optionSpan__Name,
+.register_optionSpan__website,
+.register_optionFavicon {
+  vertical-align: middle;
+}
+.register_optionFavicon {
+  margin-right: @size-0;
+  line-height: 1;
+}
+.register_optionSpan__website {
+  float: right;
+  font-weight: 200;
+}
+.register_accountSectionTabRow {
+  .row;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+.register_accountSectionTab {
+  .register_formHeader;
+  box-shadow: none;
+  margin-right: @size-0;
+  float: left;
+  position: relative;
+  color: @text-gray;
+  background-color: @bg-gray;
+}
+.register_accountSectionTab__active {
+  .register_accountSectionTab;
+  color: @base-white;
+  background-color: @label-blue;
+}
+.register_input {
+  position: relative;
+  background-color: transparent;
+  border-bottom: 1px solid @border;
+  color: @text-black;  
+  display: block;
+  font-size: @size-3;
+  line-height: @size-6;
+  margin-bottom: @size-0;
+  text-align: left;
+  width: 80%;
+  margin-bottom: 0;
+  float: left;
+  transition-property: border-color;
+  transition-duration: 0.15s;
+  transition-timing-function: ease;
+
+  &:focus {
+    box-shadow: none;
+    border-color: @label-blue;
+  }
+
+  &:read-only {
+    border-bottom: 0;
+    color: @text-gray;
+    background-color: @bg-loader;
+    border-radius: 6px;
+    padding-left: 0.5rem;
+    display: inline-block;
+
+    & ~ .register_inputLength
+    & ~ .phoneNumberInputMsg,
+    & ~ .phoneNumberInputMsg__show {
+      display: none;
+    }
+  }
+}

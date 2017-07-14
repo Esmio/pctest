@@ -1,0 +1,165 @@
+@import '../variables.less';
+@import '../User/profile.less';
+@import '../general/layout.less';
+
+.login_body {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  text-align: right;
+}
+.login_input {
+  margin-right: @size-0;
+  font-size: @size-1;
+}
+.login_button {
+  margin-left: @size-0;
+  float: right;
+}
+.login_icon__input {
+  font-style: @size-4;
+  vertical-align: sub;
+  color: @accent-orange;
+}
+.login_icon__success {
+  font-size: @size-2;
+  vertical-align: middle;
+  margin-left: @size-0;
+  color: @accent-teal
+}
+.login_CTABtns {
+  .column;
+  float: right;
+}
+.login_CTABtn {
+  margin-left: @size-0;
+  min-width: @size-6 * 3;
+}
+.login_buttons {
+  float: right;
+  padding: @size-0 0;
+}
+.logout_button {
+  font-size: inherit;
+  float: right;
+}
+.textWrapper {
+  margin: 0 @size-1;
+  min-width: 100px;
+  float: right
+}
+.login_userInfo {
+  width: 100%;
+  position: relative;
+  margin-right: @size-3;
+}
+.login_userInfoContent {
+  .column;
+  float: none;
+  margin: 0 auto;
+  position: relative;
+
+  .profile_contentBody {
+    margin: 0;
+    padding: 0;
+
+  }
+  .profile_accountProfileInfo,
+  .profile_accountUserProfile {
+    vertical-align: middle;
+    margin: 0 @size-3 0 0;
+  }
+}
+.login_dropDown {
+  .column;
+  float: right;
+  position: relative;
+  margin-right: @size-3;
+}
+.login_userProfilePic {
+  float: right;
+}
+.login_balance {
+  color: @text-gray;
+  font-size: @size-1;
+  padding-right: @size-3;
+}
+.quickAccessBar {
+  .clearfix;
+  align-content: center;
+  background-color: @base-white;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+.quickAccessBarBtn {
+  color: @label-blue;
+  height: @button-height;
+  font-size: @size-1;
+  padding: 0 @size-2;
+  position: relative;
+  &:not(:first-child)::after {
+    content: '';
+    position: absolute;
+    background-color: @border;
+    width: 1px;
+    left: 0;
+    top: @size-0;
+    bottom: @size-0;
+    right: auto;
+  }
+
+  [class*='mdi'] {
+    margin-right: @size-0;
+    font-size: @size-4;
+  }
+  i, span {
+    display: inline-block;
+    line-height: 1;
+    vertical-align: middle;
+  }
+  &[disabled] {
+    color: @text-gray;
+    cursor: not-allowed;
+  }
+  &:last-child {
+    color: @accent-cinnabar;
+  }
+}
+
+.login_profileTriggerBtn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  color: @accent-orange;
+  height: @button-height;
+  font-size: @size-2;
+  padding: 0 @size-3;
+  margin-left: @size-0;
+  [class*='mdi'] {
+    display: inline-block;
+  }
+  i, span { display: flex }
+  &::after {
+    content: '';
+    position: absolute;
+    background-color: @border;
+    width: 1px;
+    left: 0;
+    top: @size-0;
+    bottom: @size-0;
+    right: auto;
+  }
+}
+.login_userProfileLinkIcon {
+  align-items: center;
+  background-color: @accent-orange;
+  border-radius: @button-height / 2;
+  color: @base-white;
+  display: flex;
+  font-size: @size-4;
+  height: @button-height;
+  justify-content: center;
+  margin-right: @size-0;
+  width: @button-height;
+}

@@ -1,0 +1,63 @@
+@import '../../../styles/variables.less';
+@import '../../../styles/general/layout.less';
+
+.gameNav {
+  display: flex;
+  flex-direction: column;
+  background-color: @playground-gray;
+  color: @base-white;
+  font-size: @size-2;
+}
+.gameNav_btns {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.gameNav_btn {
+  padding: @size-0 @size-3;
+  &[data-active=true] {
+    color: @light-orange;
+  }
+  &[disabled] {
+    cursor: default;
+  }
+}
+.gameSubnavs {
+  margin: 0 0 @size-0 0;
+  padding: 0 @size-0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  font-size: @size-2;
+}
+.gameSubnav_label {
+  color: @text-gray;
+}
+.gameSubnav_chevron {
+  font-size: @size-4;
+  margin: 0 @size-0;
+  vertical-align: middle;
+}
+.gameSubnav_btn {
+  height: @button-height;
+  border-radius: 6px;
+  background-color: @base-white;
+  color: @text-gray;
+  padding: 0 @size-3;
+  box-shadow: @shadow-dp2;
+  margin-right: @size-0;
+  transition-property: box-shadow;
+  transition-duration: 0.15s;
+  transition-timing-function: @transition-timing;
+  margin-top: @size-0;
+
+  &[data-active=true] {
+    box-shadow: 0 0 0 transparent;
+    background-color: @playground-gray;
+    color: @light-orange;
+  }
+  &:hover {
+    box-shadow: 0 0 0 transparent;    
+    color: @light-orange;
+  }
+}

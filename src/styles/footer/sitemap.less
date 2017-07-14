@@ -1,0 +1,94 @@
+@import '../variables.less';
+@import '../general/layout.less';
+@import './footerBar.less';
+
+.sitemap_labelIcon {
+  .footer_iconsFont;
+  display: inline-block;
+  margin-right: @size-0;
+  font-size: 40px;
+  color: @accent-cinnabar;
+  line-height: 1
+}
+
+.sitemap {
+  background-color: @base-white
+}
+
+.sitemap_body {
+  display: flex;
+  flex-direction: row;
+  padding: @size-3 0;
+  width: @page-width;
+  margin: 0 auto;
+}
+.sitemap_leftColumn {
+  width: 25%;
+}
+.sitemap_logo {
+  text-align: center;
+}
+.sitemap_rightColumn {
+  display: flex;
+  flex: 1;
+}
+.sitemap_benefits {
+  .row;
+  margin-top: @size-0;
+}
+
+.sitemap_benefit {
+  font-size: @size-3;
+  font-weight: 600;
+  color: @text-gray;
+  width: 50%;
+  float: left;
+}
+
+.sitemap_checkbox {
+  font-size: @size-5;
+  color: @accent-orange;
+  margin-right: @size-3
+}
+
+.sitemap_label {
+  font-size: @size-3;
+  line-height: 40px;
+  color: @text-gray
+}
+.sitemap_row {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+}
+.sitemap_column {
+  display: flex;
+  flex: 1;
+  text-align: center;
+  padding: 0 @size-0;
+  border-left: 1px dashed @border;
+}
+
+.sitemap_columnBody {
+  display: flex;
+  width: 100%;
+  text-align: left;
+}
+
+.sitemap_list {
+  color: @text-gray;
+  font-size: @size-1
+}
+
+.sitemap_listItem {
+  padding-top: @size-0
+}
+
+.sitemap_permalink {
+  color: inherit
+}
+
+.sitemap_permalink__inline {
+  color: @accent-cinnabar;
+  margin-left: 4px
+}

@@ -1,0 +1,30 @@
+@import "../variables.less";
+@import "../general/layout.less";
+
+.container {
+	.row;
+	width: @page-width;
+	height: @carousel-height;
+	text-align: right;
+	margin: 0 auto;
+	margin-bottom: @panel-margin;
+}
+.carousel {
+	.row;
+	background-color: @base-white;
+	position: relative;
+	height: @carousel-height;
+	width: @page-width - @nav-side-width - @panel-margin;
+	margin-left: auto;
+	margin-right: 0;
+	box-shadow: @shadow-dp4;
+}
+
+.carousel_img {
+	display: inline-block;
+	width: 100%;
+	height: @carousel-height;	
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+}

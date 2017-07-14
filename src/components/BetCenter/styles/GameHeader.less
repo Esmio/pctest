@@ -1,0 +1,115 @@
+@import '../../../styles/variables.less';
+@import '../../../styles/general/layout.less';
+@import '../../../styles/homepage/quickBet.less';
+
+@keyframes rollIn {
+  from {
+    transform: translate3d(100%, 0, 0) rotate(360deg);
+    opacity: 0;
+  }
+  to {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+.gameHeader {
+  display: flex;
+  flex-direction: column;
+  width:100%;
+  background-color: @bg-gray;
+}
+.gameHeader_infosRow {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: @size-3 @size-0;  
+}
+.gameHeader_infos {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  align-items: flex-start;
+  margin-right: @size-3;
+}
+.gameHeader_infosContent {
+  display: flex;
+  flex-direction: column;
+  margin-left: @size-3;
+}
+.gameIcon {
+  height: @size-9;
+  width: @size-9;
+  border: 2px solid @base-white;
+  border-radius: 50%;
+  display: inline-block;
+  box-shadow: @shadow-dp2;
+}
+
+.headerGameName {
+  font-size: 1.3rem;  font-weight: bold;
+}
+.gameHeader_timer {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  margin-left: @size-3;
+}
+.gameHeader__LastOpenResult {
+  display: flex;
+  flex: 1;
+}
+.headerLink {
+  margin-right: @size-0;
+  color: @label-blue;
+  padding: @size-0 / 2 @size-0;
+  font-size: @size-2;
+  border-radius: 6px;
+  background-color: @base-white;
+  box-shadow: @shadow-dp2;
+
+  i {
+    vertical-align: middle;
+  }
+  [class*=mdi] {
+    margin-right: @size-0/2;
+    font-size: @size-3;
+  }
+}
+.headerLinks {
+  margin-top: @size-0;
+  display: flex;
+  flex-direction: row;
+}
+
+.gameHeader_headerPhase {
+  font-size: @size-3;
+  margin-bottom: @size-0;
+}
+
+.gameHeader_openNumbers {
+  display: flex;
+  align-items: center;
+  font-size: @size-4;
+  color: @label-blue;
+  text-align: center;
+}
+.gameHeader_openNumberDivider {
+  margin-right: @size-0 / 2;
+  color: @text-black;
+  font-size: @size-3;
+  vertical-align: middle;
+}
+.gameHeader_headerPhase__grayOut {
+  .gameHeader_headerPhase;
+  font-size: @size-2;
+  color: @text-gray;
+}
+
+.gameHeader_openNumber {
+  .quickBet_contentsNumber__history;
+  margin-right: @size-0 / 2;
+  margin-bottom: 0;
+}

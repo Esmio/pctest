@@ -1,0 +1,73 @@
+@import '../variables.less';
+
+.footer_iconsFont {
+	font-family:"iconFont";
+	font-style:normal;
+	-webkit-font-smoothing: antialiased;
+	-webkit-text-stroke-width: 0.2px;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.footer {
+  background-color: @bg-darkGray;
+  color: @text-gray;
+}
+
+.footer_pageWidthContainer {
+  padding: @size-3 0;
+  position: relative;
+}
+
+.footer_divider {
+  height: 1px;
+  background-color: @text-black;
+  border: 0;
+  border-bottom: 1px solid #575757;
+}
+
+.footer_disclaimer {
+  font-size: @size-2;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.footer_agency {
+  font-size: @size-2;
+  text-align: right;
+}
+
+.footer_agencyTypography {
+  line-height: 1.35;
+  text-align: left;
+  display: inline-block;
+}
+
+.footer_agencyFirstLetter {
+  font-size: 280%;
+  float: left;
+  line-height: 1;
+}
+
+.footer_permalink {
+  color: inherit;
+  padding: 0 @size-0;
+}
+
+.footer_icon {
+  .footer_iconsFont;
+  display: inline-block;
+  font-size: @size-6;
+  line-height: 1;
+  margin-right: @size-3;
+}
+.footer_QR {
+  background-color: @base-white;
+  padding: @size-0;
+  border-radius: 6px;
+  margin-bottom: @size-0;
+}
+.footer_QRColumn {
+  text-align: center;
+}

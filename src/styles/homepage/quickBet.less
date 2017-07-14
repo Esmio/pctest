@@ -1,0 +1,424 @@
+@import '../variables.less';
+@import './homepageBody.less';
+
+@keyframes dropdown {
+  from { opacity: 0; transform: translateY(-@size-0) }
+  to { opacity: 1; transform: translateX(0) }
+}
+
+.quickBet_section {
+  .homePage_panel;
+	padding: 0;
+}
+
+.quickBet_tabs {
+  display: flex;
+  font-size: @size-3;
+}
+.quickBet_tab {
+  height: @size-8;
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  &[disabled] {
+    cursor: default;
+  }
+  &[data-active=true] {
+    color: @base-white;
+    background-color: @accent-cinnabar;
+  }
+}
+.quickBet_infoContent {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+.quickBet_body {
+  padding: @size-3;
+}
+.quickBet_calRow {
+  display: flex;
+  margin-top: @size-3;
+  align-items: center;
+}
+.quickBet_multiplier {
+  align-items: center;
+  background-color: @bg-gray;
+  border-radius: @button-height / 2;
+  display: flex;
+  flex-direction: row;
+  height: @button-height;
+  margin: 0 @size-3;
+  padding: 0 @size-0;
+}
+.quickBet_multiplyBtns {
+  display: flex;
+  margin: 0 @size-0;  
+  flex-direction: column;
+}
+.quickBet_multiplyBtn {
+  color: @light-orange;
+  font-size: @size-4;
+  height: @size-4;
+  width: @size-4;
+  line-height: 1;
+
+  i {
+    display: block;
+    height: @size-4;
+  }
+}
+.quickBet_multiplySpan {
+  margin: 0 @size-0 / 2;
+}
+.quickBet_calulator {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  align-items: center;
+}
+.quickBet_amount {
+  line-height: @button-height;
+  font-weight: bold;
+}
+.quickBet_amountInput {
+  height: @button-height;
+  width: 6.25rem;
+  text-align: center;
+}
+.quickBet_unitBtns {
+  background-color: @bg-gray;
+  display: flex;
+  height: @button-height;
+  align-items: center;
+  padding: 0 @size-0;
+  border-radius: @button-height / 2;
+}
+.quickBet_unitBtn {
+  height: @size-5;
+  width: @size-5;
+  font-size: @size-1;
+  background-color: @light-orange;
+  border-radius: @size-5 / 2;
+  color: @base-white;
+  & ~ & {
+    margin-left: @size-0;
+  }
+  &[data-active=true] {
+    background-color: @accent-cinnabar;
+    box-shadow: @insetShadow-dp2;
+  }
+}
+.quickBet_gameInfos {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: @size-3;
+}
+.quickBet_actionBtns {
+  display: flex;
+  align-self: flex-start;
+}
+.quickBet_openCodeLabel {
+  margin-left: @size-3;
+  font-size: @size-2;
+  color: @text-gray;
+}
+.quickBet_gameIcon {
+  height: @size-7 * 2;
+  width: @size-7 * 2;
+  margin-right: @size-3;
+}
+.quickBet_gameName {
+  font-size: @size-4;
+}
+.quickBet_gameDescription {
+  font-size: @size-2;
+}
+.quickBet_actionBtn {
+  margin-left: @size-3;
+  color: @accent-cinnabar;
+  font-size: @size-2;
+  border: 1px solid @accent-cinnabar;
+  line-height: @button-height;
+  padding: 0 @size-3;
+  border-radius: @button-height / 2;
+
+  [class*=mdi] {
+    margin-right: @size-0 / 2;
+    font-size: @size-4;
+  }
+  i {
+    vertical-align: middle;
+    line-height: inherit;
+    display: inline-block;
+  }
+}
+.quickBet_numberingRow {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: @size-0 @size-0 0 @size-0;  
+  border: 1px solid @border;
+  border-radius: @size-7;  
+}
+.quickBet_lotNumbers {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  flex-direction: row;
+}
+.quickBet_lotNumbersDivider {
+  margin: 0 @size-0 / 2 @size-0 0;
+  font-size: @size-2;
+}
+.quickBet_refreshBtn {
+  background-color: @label-blue;
+  height: @size-6;
+  font-size: @size-2;
+  color: @base-white;
+  margin: 0 0 @size-0 @size-0;
+  border-radius: @size-6;
+  padding: 0 @size-3;
+  box-shadow: @insetShadow-dp2;
+  [class*="mdi"] {
+    margin-right: @size-0;
+    font-size: @size-4;
+  }
+}
+.quickBet_refreshBtn__isPristine {
+  .quickBet_refreshBtn;
+  box-shadow: 0 0 0 transparent;
+  background-color: @accent-cinnabar;
+}
+.quickBet_awaitingMsg {
+  margin: 0 0 @size-0 @size-0;
+  color: @text-gray;
+}
+.quickBet_contentsNumber {
+  animation: dropdown 0.3s 1 @transition-timing;
+  border-radius: 20px;
+  color: @base-white;
+  display: inline-block;
+  font-size: @size-3;
+  font-weight: 600;
+  height: @size-6;
+  line-height: @size-6;
+  margin: 0 @size-0 / 2 @size-0 0;
+  text-align: center;
+  width: @size-6;
+  background-color: @label-blue;  
+  background-image: linear-gradient(
+    145deg,
+    lighten(@label-blue, 35%) 0%,
+    lighten(@label-blue, 25%) 30%,
+    lighten(@label-blue, 15%) 60%,
+    @label-blue 100%
+  );
+  
+  &[data-color="red"] {
+    background-color: @accent-cinnabar;  
+    background-image: linear-gradient(
+      145deg,
+      @light-orange 0%,
+      @accent-orange 30%,
+      lighten(@accent-cinnabar, 5%) 60%,
+      @accent-cinnabar 100%
+    );
+  }
+  &[data-color="blue"] {
+    background-color: @label-blue;  
+    background-image: linear-gradient(
+      145deg,
+      lighten(@label-blue, 30%) 0%,
+      lighten(@label-blue, 20%) 30%,
+      lighten(@label-blue, 10%) 60%,
+      @label-blue 100%
+    );
+  }
+  &[data-color="green"] {
+    background-color: @accent-teal;  
+    background-image: linear-gradient(
+      145deg,
+      lighten(@accent-teal, 15%) 0%,
+      lighten(@accent-teal, 10%) 30%,
+      lighten(@accent-teal, 5%) 60%,
+      @accent-teal 100%
+    );
+  }
+}
+.quickBet_contentsNumber__history {
+  .quickBet_contentsNumber;
+  background-color: @accent-cinnabar;  
+  background-image: linear-gradient(
+    145deg,
+    @light-orange 0%,
+    @accent-orange 30%,
+    lighten(@accent-cinnabar, 5%) 60%,
+    @accent-cinnabar 100%
+  );
+}
+
+.lotteryTab_bar {
+  background-color: @base-white
+}
+
+.lotteryTab_barBtn {
+  padding: @size-4;
+  text-align: center;
+  width: 100%;
+  font-size: @size-2;
+  font-weight: 600
+}
+
+.lotteryTab_bar__active {
+  background-color: @accent-cinnabar;
+  color: @base-white
+}
+
+.lotteryTab_contents {
+  // margin-top: @size-0;
+  padding: @size-0;
+}
+
+.lotteryTab_contentsRow {
+  padding: @size-0 0;
+}
+
+.lotteryTab_contentsThumbnail {
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.lotteryTab_contentsDate {
+  font-weight: 600;
+  font-size: @size-2;
+  margin: @size-2 0
+}
+
+.lotteryTab_contentsText {
+  font-size: @size-2;
+  font-weight: 500;
+  margin: @size-0 0;
+}
+
+.lotteryTab_contentsBtns__withIcon {
+  text-align: right;
+  padding: @size-2 0
+}
+
+.lotteryTab_contentsInfo {
+  margin-left: @size-3
+}
+
+.lotteryTab_contentsBtn__withIcon {
+  margin: 0 auto;
+  font-size: @size-2;
+  margin-left: @size-1;
+  padding-left: @size-4;
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: center left
+}
+
+.lotteryTab_contentsBtns__buyIn {
+  text-align: right
+}
+
+.lotteryTab_contentsBtn__buyIn {
+  background-image: linear-gradient(to top, #ffd411 0%, #ffffff 100%);
+  background-color: #ffd411;
+  color: @accent-cinnabar;
+  font-size: @size-4;
+  height: 40px;
+  border-radius: 20px;
+  border: 1px solid @accent-cinnabar;
+  padding: 0 @size-3;
+  font-weight: 700
+}
+
+.lotteryTab_contentsInput {
+  display: inline-block;
+  font-size: @size-3;
+  line-height: @button-height;
+  height: @button-height;
+  width: 80px;
+  text-align: center;
+  margin: 0 2px;
+  border: 1px solid @border;
+  min-width: 50px
+}
+
+.lotteryTab_contentsPrice {
+  height: @button-height;
+  line-height: @button-height;
+  font-size: @size-3;
+  margin-left: @size-1
+}
+
+.lotteryTab_contentsPriceContent {
+  color: @accent-cinnabar;
+  font-weight: 600;
+  margin: 0 @size-0
+}
+
+.multiplyToggleButton {
+  width: buttonHeight;
+  height: buttonHeight;
+  text-align: center;
+  display: inline-block;
+  font-size: @size-3;
+  line-height: 1;
+  padding: 0;
+  color: @text-gray;
+  border: 1px solid @border;
+}
+
+.lotteryTab_contentsBtn__refresh {
+  padding: 0 @size-3;
+  height: 30px
+}
+
+.lotteryTab_contentsIcon__refresh {
+  font-size: @size-3;
+  margin-right: @size-0;
+}
+
+.lotteryTab_contentsBtn__plusMinus {
+  vertical-align: middle;
+}
+
+.lotteryTab_contentsBtn__checkBox {
+  .lotteryTab_contentsBtn__withIcon;
+  background-image: url('../../assets/icon/icon_choice.png');
+}
+.lotteryTab_contentsBtn__chart {
+  .lotteryTab_contentsBtn__withIcon;
+  background-image: url('../../assets/icon/icon_chart.png');
+}
+.lotteryTab_contentsBtn__plus {
+  .lotteryTab_contentsBtn__plusMinus;
+}
+.lotteryTab_contentsBtn__minus {
+  .lotteryTab_contentsBtn__plusMinus;
+  background-color: @bg-gray;
+}
+@keyframes floatDown {
+  from { opacity: 0; transform: translateY(-50%) }
+  to { opacity: 1; transform: translateY(0) }
+}
+
+.quickBet_responseMsg {
+  text-align: center;
+  border-radius: @button-height/2;
+  font-size: @size-2;
+  line-height: @button-height;
+  margin-bottom: @size-0;
+  animation: floatDown 0.15s 1 @transition-timing;
+  animation-fill-mode: forwards;
+  color: @base-white;
+}

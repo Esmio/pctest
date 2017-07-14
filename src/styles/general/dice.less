@@ -1,0 +1,26 @@
+@import '../variables.less';
+
+.dice {
+  display: inline-block;
+  font-size: @size-7;
+  background-color: @base-white;
+  line-height: 1;
+  border-radius: 6px;
+  box-shadow: @shadow-dp4;
+  margin-right: @size-0;
+
+  &::before {
+    font-size: inherit;
+    color: inherit;
+  }
+  &[data-num="1"] {
+    color: @accent-cinnabar;
+  }
+  &[data-num="2"],
+  &[data-num="3"],
+  &[data-num="4"],
+  &[data-num="5"],
+  &[data-num="6"] {
+    color: @text-black;
+  }
+}

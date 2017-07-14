@@ -1,0 +1,55 @@
+@import '../variables.less';
+
+.img_container {
+    position: relative;
+    overflow: hidden;
+    background-color: @bg-loader;
+    display: inline-block
+}
+
+.img_container__error {
+    .img_container;
+    border: 1px solid @border;
+}
+
+.image {
+    position: absolute;
+    height: 0;
+    width: 0;
+    display: none;
+}
+
+.img_wrapper {
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center
+}
+
+.img_alt_wrapper {
+    overflow: hidden;
+    position: absolute;
+    text-align: center;
+    text-overflow: ellipsis;
+    font-size: @size-1;
+    top: 50%;
+    color: @text-gray;
+    transform: translate3d(0, -50%, 0);
+    vertical-align: middle;
+    white-space: nowrap;
+    width: 100%;
+}
+
+.img_alt {
+    vertical-align: middle;
+}
+
+.img_loader {
+    transform: translate3d(0, -100%, 0);
+}
+
+.img_alt_icon {
+    vertical-align: baseline;
+    color: @accent-cinnabar;
+}

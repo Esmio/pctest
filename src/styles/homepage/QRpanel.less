@@ -1,0 +1,75 @@
+@import '../variables.less';
+@import '../homepage/homepageBody.less';
+
+.QRPanel {
+  .homePage_panel;
+  float: none;
+}
+
+.QRPanel_header {
+  .homePage_panelHeader;
+  text-align: center;
+}
+
+.QRPanel_body {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.QR_code {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  text-align: center;
+}
+.QR_codeBody {
+  display: inline-block;
+  margin-top: @size-0;
+}
+.QR_codeBackdrop {
+  background-color: @base-white;
+  height: 100%;
+  width: 100%
+}
+.QR_codeImg {
+  height: 80px;
+  width: 80px;
+}
+.QR_codeBorder {
+  height: @size-3;
+  width: @size-3;
+  display: inline-block;
+  position: absolute;
+  background-color: @accent-cinnabar;
+  z-index: -2
+}
+.QRPanel_device {
+  text-align: center
+}
+.QRPanel_buttons {
+  display: flex;
+}
+.QRPanel_toggleBtn {
+  float: left;
+  width: 50%;
+  text-align: center;
+  height: @button-height;
+  font-size: @size-2;
+  font-weight: 600;
+
+  [class*=mdi] {
+    font-size: @size-3;
+    margin-right: @size-0 / 2;
+  }
+  i {
+    vertical-align: middle;
+  }
+  &[data-active=true] {
+    color: @text-black;
+  }
+}
+.QRPanel_btnIcon {
+  font-size: @size-4;
+  margin-right: 4px
+}

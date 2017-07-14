@@ -1,0 +1,127 @@
+@import "../variables.less";
+@import "../general/layout.less";
+@import "./homepageBody.less";
+@import "./quickBet.less";
+
+.history_panel {
+	.homePage_panel;
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+}
+.history_headers {
+	.clearfix;
+}
+.history_header {
+	.homePage_panelHeader;
+	padding: @size-0 @size-0 0 @size-0;
+	float: left;
+}
+
+.history_btn__loadMore {
+	.history_header;
+	text-align: right;
+	font-weight: initial;
+	float: right;
+	cursor: pointer;
+	user-select: none;
+}
+.history_text {
+	font-size: @size-2;
+	color: @text-gray;
+}
+.ellipsis {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.history_itemHeaders {
+	display: flex;
+	justify-content: space-between;
+	flex-direction: row;
+}
+.history_lotName {
+	.ellipsis;
+	float: left;
+	font-size: @size-1;
+	font-weight: 600;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.history_lotDate {
+	.ellipsis;
+	.history_text;
+	text-align: right;
+	font-size: @size-1;
+	margin-bottom: @size-0;
+}
+.history_lotPhase {
+	font-size: @size-1;
+	color: @text-black;
+}
+.history_awaitMsg {
+	font-size: @size-2;
+	margin-bottom: @size-0;
+}
+.history_listItem {
+	padding: @size-0;
+	border-top: 1px dashed @border;
+}
+.history_list{
+	.clearfix;
+	display: block;
+	overflow-y: scroll;
+	transition: height 0.3s ease-in-out;
+}
+.history_permalinks {
+	margin-top: @size-0;
+	text-align: right;
+}
+.history_permalink {
+	.history_lotPhase;
+	margin-left: @size-0;
+	padding-left: @size-0;
+	border-left: 1px solid @border;
+}
+
+.history_numbers {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	font-size: @size-2;
+	flex-wrap: wrap;
+}
+.history_numberDivider {
+	margin-bottom: @size-0 / 2;
+	font-size: @size-1;	
+}
+.history_number {
+	background-color: @accent-cinnabar;
+  border-radius: @size-5 / 2;
+  color: @base-white;
+  display: inline-block;
+  text-align: center;
+  min-width: @size-5;
+  height: @size-5;
+  line-height: @size-5;
+  margin-right: @size-0 / 2;
+	margin-bottom: @size-0 / 2;
+  &[data-color="red"] {
+    background-color: @accent-cinnabar;
+  }
+  &[data-color="blue"] {
+    background-color: @label-blue;
+  }
+  &[data-color="green"] {
+    background-color: @accent-teal;
+  }
+}
+.history_numberDivider {
+	display: inline-block;
+	margin-bottom: @size-0 / 2;
+	&:not(:last-child) {
+		margin-right: @size-0 / 2;
+	}
+}

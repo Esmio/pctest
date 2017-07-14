@@ -1,0 +1,37 @@
+@import '../variables.less';
+@import '../homepage/homepageBody.less';
+
+.predictPanel {
+  .homePage_panel;
+}
+
+.predictPanel_header {
+  .homePage_panelHeader;
+}
+.predictPanel_banner {
+  width: 100%;
+  cursor: pointer;
+  margin-bottom: @size-1;
+}
+.predictPanel_rates {
+  margin-bottom: @size-1;
+}
+.predictPanel_label {
+  font-size: @size-1;
+  color: @text-gray;
+  margin-bottom: 5px;
+}
+.predictPanel_list {
+  display: block;
+  margin-bottom: @size-1;
+  font-size: @size-1;
+}
+.predictPanel_listItem {
+  padding: 0 @size-0 0 0;
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 33%;
+  color: @base-black;
+}

@@ -1,0 +1,21 @@
+{
+  "name": "106pcweb",
+  "description": "",
+  "main": "",
+  "authors": [
+    "vincylouis <louis-jx@jxinternet.com>"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "mdi": "^1.9.33",
+    "simple-line-icons": "^2.4.1"
+  }
+}

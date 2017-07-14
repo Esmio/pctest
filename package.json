@@ -1,0 +1,49 @@
+{
+  "private": true,
+  "scripts": {
+    "postinstall": "bower install && bower update",
+    "start": "roadhog server",
+    "build": "roadhog build",
+    "lint": "eslint --ext .js src test",
+    "json": "json-server ./mock/db.json"
+  },
+  "engines": {
+    "install-node": "6.9.2"
+  },
+  "dependencies": {
+    "antd": "^2.12.0",
+    "babel-runtime": "^6.9.2",
+    "bcryptjs": "^2.4.3",
+    "classnames": "^2.2.5",
+    "dva": "^1.2.1",
+    "eslint": "^4.2.0",
+    "eslint-config-rallycoding": "^3.2.0",
+    "fingerprintjs2": "^1.5.1",
+    "gsap-react-plugin": "^1.0.2",
+    "lodash": "^4.17.4",
+    "moment": "^2.18.1",
+    "nprogress": "^0.2.0",
+    "prop-types": "^15.5.10",
+    "qrcode.react": "^0.7.1",
+    "react": "^15.6.1",
+    "react-addons-create-fragment": "^15.6.0",
+    "react-clipboard.js": "^1.1.2",
+    "react-dom": "^15.6.1",
+    "react-motion": "^0.5.0",
+    "redux-persist": "^4.8.2"
+  },
+  "devDependencies": {
+    "babel-eslint": "^7.2.3",
+    "babel-plugin-dva-hmr": "^0.3.2",
+    "babel-plugin-import": "^1.2.1",
+    "babel-plugin-transform-runtime": "^6.9.0",
+    "eslint-config-airbnb": "^15.0.2",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-react": "^7.1.0",
+    "expect": "^1.20.2",
+    "husky": "^0.14.3",
+    "json-server": "^0.11.0",
+    "redbox-react": "^1.4.3",
+    "roadhog": "^0.6.0"
+  }
+}

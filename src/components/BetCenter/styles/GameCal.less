@@ -1,0 +1,93 @@
+@import '../../../styles/variables.less';
+
+.gameCal {
+  align-content: center;
+  background-color: @playground-gray;
+  color: @base-white;
+  display: flex;
+  flex-direction: row;
+  font-size: @size-2;
+  margin: @size-0;
+  padding: 0 @size-0 0 @size-3;
+  align-items: center;
+  height: @button-height;
+  border-radius: @button-height / 2;
+}
+.gameCal_multiplyBtn {
+  font-size: @size-3;
+  line-height: 1;
+  background-color: @base-white;
+  color: @playground-gray;
+  border-radius: @size-5 / 2;
+  height: @size-5;
+  width: @size-5;
+  margin: 0 @size-0 / 2;
+  box-shadow: @shadow-dp2;
+  i { display: block }
+
+  &[data-active=true] {
+    background-color: @light-orange;
+  }
+}
+.gameCal_multiplySpan {
+  margin-right: @size-3;
+}
+.gameCal_multiplyInput {
+  background-color: darken(@playground-gray, 15%);
+  height: @size-5;
+  padding: 0 @size-0;
+  width: @size-9;
+  text-align: center;
+  border-radius: 6px;
+}
+.gameCal_numberOfUnits {
+  margin-right: @size-3;
+}
+.gameCal_unitBtn {
+  .gameCal_multiplyBtn;
+  font-weight: bold;
+  font-size: @size-1;
+}
+.gameCal_amountSpan {
+  margin-left: @size-0;
+  display: flex;
+  flex: 1;
+  min-width: 0;
+  p {
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+.gameCal_ctrlBtns {
+  display: flex;
+  flex: 1;
+  justify-content: flex-end;
+}
+.gameCal_ctrlBtn {
+  background-color: @base-white;
+  height: @size-5;
+  box-shadow: @shadow-dp4;
+  min-width: @size-7 + @size-3;
+  padding: 0 @size-0;
+  color: @playground-gray;
+  line-height: 1;
+  margin-left: @size-0;
+  border-radius: @size-5 / 2;
+  &[disabled] {
+    cursor: not-allowed;
+    box-shadow: 0 0 0 transparent;
+    color: rgba(0, 0, 0, 0.9);
+    background-color: @bg-gray;
+  }
+}
+.gameCal_ctrlBtn__clear {
+  .gameCal_ctrlBtn;
+  color: @base-white;
+  background-color: @accent-cinnabar;
+  &[disabled] {
+    background-color: @accent-cinnabar;
+    color: rgba(255, 255, 255, 0.9);
+  }
+}

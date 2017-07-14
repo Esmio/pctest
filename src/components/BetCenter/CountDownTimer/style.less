@@ -1,0 +1,42 @@
+.countDownContainer {
+  padding: 5px 5px 5px 5px;
+  font-size: 1.6rem;
+}
+.circle {
+  width: 69px;
+  height: 69px;
+  display: inline-block;
+  background: url("../../../assets/image/clock.gif") no-repeat;
+}
+.comma {
+  vertical-align: 25px;
+  font-weight: bold;
+}
+
+.CircularProgressbar {
+  /*
+   * This fixes an issue where the CircularProgressbar svg has
+   * 0 width inside a "display: flex" container, and thus not visible.
+   *
+   * If you're not using "display: flex", you can remove this style.
+   */
+  width: 100%;
+}
+
+.CircularProgressbar .CircularProgressbarPath {
+  stroke: #EED257;
+  stroke-linecap: round;
+  transition: stroke-dashoffset 0.5s ease 0s;
+}
+
+.CircularProgressbar .CircularProgressbarTrail {
+  stroke: #0A4C96;
+}
+
+.CircularProgressbar .CircularProgressbarText {
+  fill: #0A4C96;
+  font-size: 2.0rem;
+  dominant-baseline: middle;
+  text-anchor: middle;
+}
+

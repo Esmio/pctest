@@ -1,0 +1,97 @@
+@import '../variables.less';
+@import '../common.less';
+@import '../general/layout.less';
+
+@keyframes popOut {
+	from { opacity: 0; transform: scale(0.8); }
+	to { opacity: 1; transform: scale(1); }
+}
+
+.sideNav {
+	.column;
+	background-color: @base-white;
+	width: @nav-side-width;
+	color: @text-black;
+	margin-bottom: @panel-margin;
+	box-shadow: @shadow-dp2;
+	margin-top: -@carousel-height - @panel-margin ;
+}
+.sideNav_thumbnail {
+	height: @size-7;
+	width: @size-7;
+	border-radius: 50%;
+	text-align: center;
+	box-shadow: @shadow-dp2;
+	display: inline-block;
+}
+.sideNav_moreBtn {
+	background-color: @bg-gray;
+	border-radius: 50%;
+	color: @text-gray;
+	display: inline-block;
+	font-size: @size-4;
+	font-weight: bold;
+	height: @size-7;
+	line-height: 1;
+	width: @size-7;
+
+	& ~ .sideNav_listName {
+		margin-top: 5px;
+	}
+}
+.sideNav_lotBox {
+	width: 33.3%;
+	padding: @size-0 / 2;
+}
+.sideNav_lotBox__extra {
+	.sideNav_lotBox;
+	opacity: 0;
+	transform-origin: center center;
+	animation: popOut 0.1s 1 @transition-timing;
+	animation-fill-mode: forwards;
+}
+.sideNav_lotSection {
+	display: flex;
+	flex-direction: column;
+}
+.sideNav_listLabel {
+	background-color: @bg-gray;
+	color: @text-gray;
+	font-size: @size-2;
+	padding: @size-0;
+	text-align: center;
+	position: relative;
+	i {
+		position: absolute;
+		top: 50%;
+		font-size: @size-3;
+		padding-right: @size-0 / 2;
+		vertical-align: middle;
+		transform: translate(-100%, -50%);
+	}
+}
+.sideNav_lotList {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	font-size: @size-2;
+	text-align: center;
+	color: @text-black;
+	max-height: @size-8 * 3;
+	overflow: auto;
+
+	transition-property: max-height;
+	transition-timing-function: @transition-timing;
+}
+.sideNav_lotList__expanded {
+	.sideNav_lotList;
+	max-height: @size-8 * 6;
+}
+.sideNav_listName {
+	display: block;
+	font-size: @size-1;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	width: 100%;
+}

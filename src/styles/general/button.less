@@ -1,0 +1,35 @@
+@import '../variables.less';
+.button {
+	text-align: center;
+	min-height: @button-height;
+	font-size: @size-2;
+	padding: 0 @size-0;
+	vertical-align: middle;
+	color: @label-blue;
+	min-width: @size-9;
+
+	&:disabled {
+		color: @text-gray;
+	}
+}
+
+.orangeBtn {
+	color: @base-white;
+	background-image: linear-gradient(to top, @accent-orange 0%, @light-orange 100%);
+	background-color: @accent-orange;
+	&:disabled {
+		color: @base-white;
+		background-color: @border;
+		background-image: none;
+		box-shadow: 0 0 0 transparent;
+	}
+}
+
+.redBtn {
+	color: @base-white;
+	background-color: @accent-cinnabar;
+	&:disabled {
+		color: @base-white;		
+		background-color: @border;
+	}
+}

@@ -1,0 +1,112 @@
+@import './variables.less';
+
+/*normalize */
+
+html {
+	-ms-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+	font-size: @base-size/1 sans-serif;	
+}
+
+body {
+	margin: 0;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+	font-size: inherit;
+	font-family: @font-family !important;
+}
+
+#root {
+	display: flex;
+	flex: 1 1;
+	flex-direction: column;
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+blockquote,
+figure,
+ol,
+ul {
+	margin: 0;
+	padding: 0;
+}
+
+main,
+li {
+	display: block;
+}
+
+h1,
+h2,
+h3,
+h4 {
+	font-size: inherit;
+}
+
+strong {
+	font-weight: bold;
+}
+
+a,
+button {
+	transition: none;
+	color: inherit;
+}
+
+a {
+	text-decoration: none;
+}
+
+button {
+	overflow: visible;
+	border: 0;
+	font: inherit;
+	-webkit-font-smoothing: inherit;
+	letter-spacing: inherit;
+	background: none;
+	cursor: pointer;
+}
+
+::moz-focus-inner {
+	padding: 0;
+	border: 0;
+}
+
+:focus {
+	outline: 0;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+	border: 0;
+}
+
+::-webkit-scrollbar {
+	width: 0;
+	display: 'none';
+}
+
+
+/* Track */
+
+::-webkit-scrollbar-track {
+	background: transparent;
+}
+
+
+/* Handle */
+
+::-webkit-scrollbar-thumb {
+	background: transparent;
+	display: none;
+}
+
+::-webkit-scrollbar-thumb:window-inactive {
+	background: transparent;
+	display: none;
+}

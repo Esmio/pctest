@@ -1,0 +1,70 @@
+html {
+	font-family: @font-family;
+}
+
+body, #root {
+	display: flex;
+	flex: 1 1;
+	flex-direction: column;
+}
+
+input {
+	border: 0;
+	outline: none;
+}
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+	border: 0;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+input[type=number] {
+    -moz-appearance:textfield;
+}
+
+a,
+input,
+button {
+	outline: 0;
+	&:hover, &:active, &:focus {
+		outline: 0;
+	}
+}
+a, button {
+	&:disabled {
+		cursor: not-allowed;
+	}
+}
+
+a:hover {
+	color: inherit;
+}
+
+i {
+	font-style: normal;
+}
+
+td {
+	&[data-align=left] {
+		text-align: left;
+	}
+	&[data-align=right] {
+		text-align: right;
+	}
+	&[data-align=center] {
+		text-align: center;
+	}
+}
+
+.ellipsis {
+  display: inline-block;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

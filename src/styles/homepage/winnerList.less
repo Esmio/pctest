@@ -1,0 +1,81 @@
+@import '../variables.less';
+@import './homepageBody.less';
+
+.winnerList {
+	.homePage_panel;
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+
+	table {
+		font-size: @size-1;
+		border-collapse: collapse;
+		width: 100%;
+		td {
+			padding: @size-0 @size-0 / 2;
+			&:not(:first-child) {
+				text-align: right;
+			}
+		}
+		tr:nth-child(even) td {
+			background-color: @bg-gray;
+		}
+		thead {
+			td {
+				color: @base-white;
+				background-color: @accent-cinnabar;
+			}
+		}
+	}
+}
+.winnderList_body {
+	overflow-y: scroll;
+}
+.winnerList_header {
+	.homePage_panelHeader;
+	padding: @size-0 @size-0 0 @size-0;
+}
+
+.winnerList_tableHeader {
+	background-color: @accent-cinnabar;
+}
+
+.winnerList_tableHeaderContent {
+	display: inline-block;
+	color: @base-white;
+	font-weight: 400;
+	text-align: center;
+	padding: @size-0;
+	width: 50%;
+	font-size: @size-2;
+}
+
+.winnerList_listBody {
+	margin: 0;
+	overflow-y: auto;
+	transition: height 0.3s ease-in-out;	
+}
+
+.winnerList_listItem {
+	border-bottom: 1px dashed @border;
+}
+
+.winnerList_listItemContent {
+	padding: @size-0;
+	font-size: @size-1;
+	display: inline-block;
+	font-weight: 600;
+}
+
+.winnerList_listItemBullet {
+	.winnerList_listItemContent;
+	color: @accent-cinnabar;
+	width: 20%;
+	text-align: center;
+}
+
+.winnerList_listItemUserInfo {
+	.winnerList_listItemContent;
+	display: flex;
+}

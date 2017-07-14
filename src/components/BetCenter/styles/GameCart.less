@@ -1,0 +1,102 @@
+@import '../../../styles/variables.less';
+
+.gameCart {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  background-color: @playground-gray;
+  padding: @size-0;
+  margin-right: @size-0;
+  color: @base-white;
+}
+.gameCart_table {
+  display: flex;
+  flex-direction: column;
+  flex: 9;
+  font-size: @size-2;
+  border-collapse: collapse;
+  border-radius: 6px;
+  overflow: hidden;
+  thead, tbody {
+    display: flex;
+    flex-direction: column;
+  }
+  tr[data-repeated=true] {
+    td {
+      color: @light-orange;
+    }
+  }
+  td {
+    height: @size-5;
+    padding: 0 @size-0;
+    position: relative;
+    display: inline-block;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    width: attr(width);
+
+    &:only-child {
+      text-align: center;
+      color: rgba(255, 255, 255, 0.6);
+    }
+  }
+  thead {
+    td {
+      color: rgba(255, 255, 255, 0.6);
+      background-color: rgba(0,0,0,0.2);
+    }
+  }
+}
+.gameCart_ctrlBtn {
+  line-height: 1;
+  font-size: @size-3;
+  color: rgba(255, 255, 255, 0.6);
+  i {
+    display: inline-block;
+    vertical-align: middle;
+  }
+}
+.gameCart_popOverText {
+  i { vertical-align: middle }
+  [class*=mdi] {
+    margin-right: @size-0;
+    font-size: @size-3;
+    display: inline-block;
+  }
+}
+
+@keyframes floatDown {
+  from { opacity: 0; transform: translateY(-50%) }
+  to { opacity: 1; transform: translateY(0) }
+}
+
+.gameCart_response {
+  text-align: center;
+  border-radius: 6px;
+  font-size: @size-2;
+  line-height: @button-height;
+  margin-bottom: @size-0;
+  animation: floatDown 0.15s 1 @transition-timing;
+  animation-fill-mode: forwards;
+}
+.gameCart_tableColumn {
+  display: flex;
+  flex: 9;
+  flex-direction: column;
+}
+.gameCart_actionColumn {
+  display: flex;
+  flex: 3;
+  justify-content: center;
+}
+.gameCart_clearAllBtn {
+  border-radius: @size-3;
+  box-shadow: @shadow-dp2;
+  padding: 0 @size-0;
+  vertical-align: middle;
+  &:not([disabled]) {
+    background-color: @accent-cinnabar;
+    color: @base-white;
+  }
+}

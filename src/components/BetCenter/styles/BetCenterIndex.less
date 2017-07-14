@@ -1,0 +1,186 @@
+@import '../../../styles/variables.less';
+@import '../../../styles/header/login.less';
+@import '../../../styles/general/layout.less';
+
+.betCenter {
+  display: flex;
+  flex: 1 1;
+  flex-direction: column;
+  background-image: url("../../../assets/image/bg-shading.png");
+  background-repeat: repeat;
+}
+
+.betCenter_sidenav {
+  .column;
+  background-color: @playground-gray;
+  display: flex;
+  flex-direction: column;
+  flex: 1 1;
+  height: 100%;
+  position: fixed;
+  width: @nav-side-width;
+  z-index: 1;
+}
+
+.betCenter_logo {
+  padding: @size-0;
+  background-color: @label-blue;
+}
+
+.betCenter_logoImg {
+  max-width: 100%;
+  display: block;
+}
+
+.betCenter_body {
+  display: flex;
+  flex: 1 1;
+  align-content: center;
+  flex-direction: column;
+  width: 100%;
+  padding-left: @nav-side-width;
+}
+
+.betCenter_toptray {
+  text-align: right;
+  background-color: @bg-gray;
+}
+
+.betCenter_loginRow {
+  text-align: center;
+  background-color: @base-white;
+  padding: @size-0 0;
+}
+.betCenter_login {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 0 auto;
+  justify-content: space-between;
+  width: @page-width;
+}
+.betCenter_backHomeBtn {
+  font-size: @size-2;
+  color: @label-blue;
+  i { vertical-align: middle }
+  [class*="mdi"] {
+    font-size: @size-4;
+    display: inline-block;
+    line-height: 1;
+    margin-right: @size-0;
+  }
+}
+.betCenter_board {
+  width: @page-width;
+  box-shadow: @shadow-dp16;
+  border-radius: 6px;
+  overflow: auto;
+  margin: @size-3 auto;
+  background-color: @bg-gray;
+}
+.betCenter_boardBody {
+  display: flex;
+  flex-direction: row;
+}
+.betCenter_boardColumn {
+  display: flex;
+  flex-direction: column;
+  flex: 9;
+}
+.betCenter_widgetsColumn {
+  display: flex;
+  max-width: 18.75rem;
+  align-items: center;
+  flex-direction: column;
+  flex: 3;
+}
+@keyframes countDown {
+  from { transform: translateX(0) }
+  to { transform: translateX(100%) }
+};
+.betCenter_notificationBtn {
+  font-size: @size-2;
+  color: @base-white;
+  border-radius: 6px;
+  background-color: @accent-cinnabar;
+  height: @button-height;
+  padding: 0 @size-0;
+  position: relative;
+  overflow: hidden;
+  span {
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+  }
+  &::before {
+    content: '';
+    background-color: darken(@accent-cinnabar, 10%);
+    top: 0;
+    position: absolute;
+    z-index: 0;
+    height: 100%;
+    width: 100%;
+    right: 100%;
+    animation: countDown 7s 1 ease;
+  }
+}
+@actionBtn-size: @size-9 * 1.5;
+@actionBtns-size: @actionBtn-size + (@size-0 * 2);
+.betCenter_actionRow {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  min-height: @actionBtns-size + @size-3;
+}
+.betCenter_actionBtns {
+  background-color: darken(@bg-gray, 5%);
+  border-radius: @actionBtn-size + (@size-0 * 2) / 2;
+  box-shadow: @insetShadow-dp2;
+  padding: @size-0;
+  display: flex;
+  flex-direction: column;
+  height: @actionBtns-size;
+  width: @actionBtns-size;
+  font-size: @size-5;
+  transition: background-color 0.15s @transition-timing;
+}
+.betCenter_actionBtn {
+  color: @playground-gray; 
+  background-color: @bg-gray;
+  height: @actionBtn-size / 2;
+  width: @actionBtn-size;
+  box-shadow: @shadow-dp4;
+  background-size: 100% 150%;
+  background-position: center bottom;
+  transition: background-position 0.15s @transition-timing;
+
+  &[data-position=top] {
+    padding-top: @size-4;
+    border-top-left-radius: @actionBtn-size / 2;
+    border-top-right-radius: @actionBtn-size / 2;
+    margin-bottom: @size-0 / 4;
+    background-image: linear-gradient(to bottom, @bg-gray 0%, @base-white 51%, @bg-gray 100%);
+  }
+  &[data-position=bottom] {
+    padding-bottom: @size-4;
+    border-bottom-left-radius: @actionBtn-size / 2;
+    border-bottom-right-radius: @actionBtn-size / 2;
+    margin-top: @size-0 / 4;
+    background-image: linear-gradient(to bottom, @bg-gray 0%, @base-white 51%, @bg-gray 100%);
+  }
+  &:hover:not([disabled]) {
+    background-color: @base-white;
+    color: @base-black;
+    &[data-position=top] {
+      background-position: center top;
+    }
+    &[data-position=bottom] {
+      background-position: center top;
+    }
+  }
+  &[disabled] {
+    color: @border;
+    cursor: default;
+  }
+}

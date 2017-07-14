@@ -1,0 +1,137 @@
+@import '../../../styles/variables.less';
+@import '../../../styles/general/layout.less';
+
+@keyframes pouncing {
+	from { transform: translateY(0)}
+	50% { transform: translateY(-25%)}
+	to { transform: translateY(0)}
+}
+
+.gameIcon {
+    height: @size-6;
+    width: @size-6;
+    display: inline-block;
+    max-width: none;
+}
+
+.sideNav {
+    display: flex;
+    overflow-x: visible;
+	overflow-y: auto;
+    flex-direction: column;
+}
+
+.typeIcon {
+    height: @size-5;
+    width: @size-5;
+    display: inline-block;
+}
+
+.hideMenu {
+    display: none;
+}
+
+.menuItem {
+    .clearfix;
+	font-size: @size-2;
+    background-color: @label-blue;
+    border-bottom: 1px solid lighten(@label-blue, 10%);
+    display: block;
+}
+
+.menuExpandToggle {
+	align-items: center;
+	display: flex;
+	font-size: inherit;
+	padding: @size-0 @size-3;
+	text-align: left;
+	width: 100%;
+    color: inherit;
+	color: rgba(255, 255, 255, 0.8);
+
+    img,
+    span {
+        vertical-align: middle;
+    }
+	&:hover {
+		color: rgba(255, 255, 255, 1);
+		.typeIcon {
+			animation: pouncing 0.4s infinite @transition-timing;
+		}
+	}
+	&:disabled {
+		cursor: default;
+	}
+}
+.subMenus {
+	overflow: hidden;
+	max-height: 0;
+	transition: max-height 0.25s @transition-timing;
+}
+.subMenus__expanded {
+	.subMenus;
+	max-height: 500px;
+}
+.gameName {
+    padding-left: @size-3;
+    color: inherit;
+	flex: 1;
+}
+.menuChevron {
+	font-size: @size-4;
+	transition: transform 0.25s @transition-timing;
+}
+.menuChevron__rotate {
+	.menuChevron;
+	transform: rotate(180deg);
+}
+.subMenuItem {
+	display: block;
+	font-size: inherit;	
+	height: @size-6 + (@size-0 * 2);
+	padding-left: @size-3;
+	text-align: left;
+	width: 100%;
+    background-color: darken(@playground-gray, 5%);
+    border-bottom: 1px solid @playground-gray;
+	transition: background-color 0.25s @transition-timing;
+	color: rgba(255, 255, 255, 0.8);
+	
+	img, span { 
+		vertical-align: middle;
+	}
+	img {
+		border-radius: 50%;
+		box-shadow: @shadow-dp2;
+		transition: margin-left 0.25s @transition-timing;
+	}
+	&[data-active=true],
+	&:hover {
+		color: rgba(255, 255, 255, 1);	
+    	background-color: @playground-gray;
+
+		img {
+			margin-left: @size-3;
+		}
+	}
+	&[disabled] {
+		cursor: default;
+	}
+}
+.fixIcon {
+    background-image: url("../../../assets/image/stretch.png");
+	background-repeat: no-repeat;
+	background-size: 44px 78px;
+	background-position: center center;
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    width: 34px;
+    height: 74px;
+    cursor: pointer;
+    z-index: 99;
+
+	&:hover {
+		background-image: url("../../../assets/image/stretch-hover.png");
+	}
+}
